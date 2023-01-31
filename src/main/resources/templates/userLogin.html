@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+    <title>Create New Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body >
+<div align="center" class="loginform">
+    <h1>Login As User</h1>
+    <br />
+     <div class="col-sm-4">
+    <form action="#" th:action="@{/validateUser}" th:object="${user}" method="post">
+ 
+      
+       <div alight="left">
+            <tr>
+               
+                <td>
+               
+                <input type="text" th:field="*{username}" class="form-control" placeholder="User Name" />
+                </td>
+            </tr>
+         </div>  
+            
+           <div alight="left">
+          
+            <tr>
+                <br>
+                <td><input type="text" th:field="*{password}" class="form-control" placeholder="password" /></td>
+            </tr>
+            </div>
+            <br>
+              <div alight="left">
+          
+            <div th:if="${error}=='l'">Invalid user data or user not registred</div>
+            </div>
+           
+         
+<br>
+            <tr>
+             <td colspan="2"> <button type="button"  th:onclick="|window.location.href='/userRegister'|"  class="btn btn-light">Register</button></td>
+            <td colspan="2"><button type="submit" class="btn btn-info">     Login    </button> </td>
+             
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

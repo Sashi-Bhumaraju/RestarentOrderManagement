@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+
+<div th:replace="~{fragments/adminNavigation :: adminNavigation}"> </div>
+
+
+<h4 align = "center">Hello Admin</h4>
+<div align = "center" >   
+     <h3><a  th:href="@{'/adminHome/new/'+ ${id}}">Add new Item</a></h3>    
+    </div>
+<div class="center-body" align = "center" >
+	<div class="col-sm-5" align = "center">
+                 <div class="panel-body" align = "center" >
+                 <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      		<th>Dish number</th>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          
+   	</tr>
+  </thead>
+  <tbody>
+      <tr  th:each="item : ${listitem}">
+		<td th:text="${item.itemid}">Dish number</td>
+		<td th:text="${item.itemname}">Name</td>
+		<td th:text="${item.itemcost}">Cost</td>
+							    
+		  <td>
+		<a th:href="@{'/adminHome/editItem/' + ${item.itemid}}">Edit</a>
+		</td>     
+		<td>
+		<a th:href="@{'/adminHome//deleteItem/' + ${item.itemid}}">Delete</a>
+		</td> 
+		</tr> 
+   
+  </tbody>
+</table>
+                    
+                 </div>
+
+            </div> 
+
+	</tr>
+
+	</tbody>
+	</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+	<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+ <div class="bg-image">  </div>
+		<div class="center-body" align = "center" >	
+		     <h3><a  th:href="@{'/'}">Choose who you are ?</a></h3>  
+		     <div class = "usertype">
+		     <button type="button "  th:onclick="|window.location.href='/userLogin'|"  class="btn btn-primary">User</button>
+		     <button type="button"  th:onclick="|window.location.href='/adminLogin'|"  class="btn btn-dark">Admin</button>
+		     </div>
+	    </div>
+	  
+</body>
+</html>
